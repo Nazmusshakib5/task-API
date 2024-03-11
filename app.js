@@ -34,8 +34,8 @@ mongoose.connect(URL,OPTION).then((res)=>{
 //Routing end point
 app.use('/api',router);
 
-app.use('*',()=>{
-
+app.use('*',(req,res)=>{
+    res.json({msg:"invalid request path"})
 })
 
 module.exports=app;
