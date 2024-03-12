@@ -1,4 +1,5 @@
 const userController=require('../controller/userController');
+const taskController=require('../controller/taskController');
 const authMiddleware=require('../middleware/authMiddleware');
 
 const express=require('express')
@@ -17,5 +18,11 @@ router.post('/profileUpdate',authMiddleware,userController.profileUpdate);
 router.get('/profileDetails',authMiddleware,userController.profileDetails);
 
 //Task Routing after login process
+router.post('/task/create',authMiddleware,taskController.create)
+router.get('/task/read',authMiddleware,taskController.read)
+router.post('/task/update/:id',authMiddleware,taskController.update)
+router.get('/task/delete/:id',authMiddleware,taskController.delete)
+
+router.get('/task/:status',authMiddleware,taskController.statusCheck)
 
 module.exports=router;

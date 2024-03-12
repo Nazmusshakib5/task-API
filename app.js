@@ -35,7 +35,7 @@ mongoose.connect(URL,OPTION).then((res)=>{
 app.use('/api',router);
 
 app.use('*',(req,res)=>{
-    res.json({msg:"invalid request path"})
+    res.json({msg:"invalid request path, You have made a mistake Some where,I a from app.js"})
 })
 
 module.exports=app;
