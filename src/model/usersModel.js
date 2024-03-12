@@ -5,7 +5,7 @@ const userSchema=mongoose.Schema({
     lastName:{type:String,require:true},
     mobile:{type:String,unique:true,require:true},
     password:{type:String,require:true},
-    },{timestamp:true,versionKey:false})
+    },{timestamps:true,versionKey:false})
 
 const userModel=mongoose.model('users',userSchema);
 
